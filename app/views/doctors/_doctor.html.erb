@@ -1,0 +1,32 @@
+ <p>
+ <strong>doctorname:</strong>
+ <%= doctor.doctorname %>
+ </p>
+
+ <p>
+ <strong>doctoremail</strong>
+ <%= doctor.doctoremail %>
+ </p>
+ 
+  <p>
+ <strong>doctorspeciality</strong>
+ <%= doctor.doctorspeciality %>
+ </p>
+ 
+  <p>
+ <strong>doctornumber</strong>
+ <%= doctor.doctornumber %>
+ </p>
+ 
+  <p>
+ <strong>doctorimage</strong>
+ <%= doctor.doctorimage %>
+ </p>
+ <p>
+<%= link_to 'Show', clinic_doctor_path(doctor) %>
+ </p>
+ <p>
+ <%= link_to 'Destroy Doctor', [doctor.clinic, doctor],
+ method: :delete,
+ data: { confirm: 'Are you sure?' } %>
+</p> 

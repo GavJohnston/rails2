@@ -1,0 +1,42 @@
+<p>
+ <strong>clinicname:</strong>
+ <%= @clinic.clinicname %>
+</p>
+
+<p>
+ <strong>clinicaddress:</strong>
+ <%= @clinic.clinicname %>
+</p>
+
+<h2>doctors</h2>
+<%= render @clinic.doctors %>
+ 
+<h2>Add a Doctor:</h2>
+<%= form_for([@clinic, @clinic.doctors.build]) do |f| %>
+ <p>
+ <%= f.label :doctorname %><br>
+ <%= f.text_field :doctorname %>
+ </p>
+  <p>
+ <%= f.label :doctoremail %><br>
+ <%= f.text_field :doctoremail %>
+ </p>
+  <p>
+ <%= f.label :doctorspeciality %><br>
+ <%= f.text_field :doctorspeciality %>
+ </p>
+  <p>
+ <%= f.label :doctornumber %><br>
+ <%= f.text_field :doctornumber %>
+ </p>
+  <p>
+ <%= f.label :doctorimage %><br>
+ <%= f.text_field :doctorimage %>
+ </p>
+
+ <p>
+ <%= f.submit %>
+ </p>
+<% end %> 
+<%= link_to 'Edit', edit_clinic_path(@clinic) %> | 
+<%= link_to 'Back', clinics_path %> 
