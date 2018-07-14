@@ -13,6 +13,13 @@
  </div>
  <% end %>
 
+
+<div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">@</span>
+  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+</div>
+
+
  <p>
  <%= f.label :clinicname %><br>
  <%= f.text_field :clinicname %>
@@ -23,9 +30,9 @@
  <%= f.text_area :clinicaddress %>
  </p>
 
- <p>
- <%= f.submit %>
- </p>
+
+<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
 
 <% end %>
 
