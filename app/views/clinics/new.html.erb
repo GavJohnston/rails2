@@ -13,22 +13,22 @@
  </div>
  <% end %>
 
+<h1>CREATE A NEW CLINIC</h1>
+
+
 
 <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+   <span class="input-group-addon" id="sizing-addon1">
+ Clinic Name</span>
+   <input type="text" class="form-control" placeholder="Clinic Name" aria-describedby="sizing-addon1" <%= f.text_field :clinicname %>
 </div>
 
 
- <p>
- <%= f.label :clinicname %><br>
- <%= f.text_field :clinicname %>
- </p>
-
- <p>
- <%= f.label :clinicaddress %><br>
- <%= f.text_area :clinicaddress %>
- </p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Clinic Address</span>
+   <input type="text" class="form-control" placeholder="Clinic Address" aria-describedby="sizing-addon1" <%= f.text_area :clinicaddress %>
+</div>
 
 
 <button type="submit" class="btn btn-primary btn-lg">Submit</button>

@@ -1,41 +1,57 @@
-<p>
- <strong>clinicname:</strong>
- <%= @clinic.clinicname %>
-</p>
+<table class="table table-bordered" id="sizing-addon2">
+  <thead>
+    <tr>
+      <th scope="col">Clinic Name</th>
+      <th scope="col">Clinic Address</th>
 
-<p>
- <strong>clinicaddress:</strong>
- <%= @clinic.clinicname %>
-</p>
+    </tr>
+  </thead>
+  <tbody>
+
+ <tr>
+ <td><%= @clinic.clinicname %></td>
+ <td><%= @clinic.clinicaddress %></td>
 
 <h2>doctors</h2>
 <%= render @clinic.doctors %>
  
 <h2>Add a Doctor:</h2>
 <%= form_for([@clinic, @clinic.doctors.build]) do |f| %>
- <p>
- <%= f.label :doctorname %><br>
- <%= f.text_field :doctorname %>
- </p>
-  <p>
- <%= f.label :doctoremail %><br>
- <%= f.text_field :doctoremail %>
- </p>
-  <p>
- <%= f.label :doctorspeciality %><br>
- <%= f.text_field :doctorspeciality %>
- </p>
-  <p>
- <%= f.label :doctornumber %><br>
- <%= f.text_field :doctornumber %>
- </p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Doctor Name</span>
+   <input type="text" class="form-control" placeholder="Doctor Name" aria-describedby="sizing-addon1" <%= f.text_field :doctorname%>
+</div>
+</p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Doctor email</span>
+   <input type="text" class="form-control" placeholder="Doctor Email" aria-describedby="sizing-addon1" <%= f.text_field :doctoremail%>
+</div>
+</p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Doctor speciality</span>
+   <input type="text" class="form-control" placeholder="Doctor Speciality" aria-describedby="sizing-addon1" <%= f.text_field :doctorspeciality%>
+</div>
+</p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Doctor number</span>
+   <input type="text" class="form-control" placeholder="Doctor number" aria-describedby="sizing-addon1" <%= f.text_field :doctornumber%>
+</div>
+</p>
   <p>
  <%= f.label :doctorimage %><br>
  <%= f.text_field :doctorimage %>
  </p>
 
  <p>
- <%= f.submit %>
+<button type="submit" class="btn btn-primary btn-lg">Create Doctor</button>
  </p>
 <% end %> 
 <%= link_to 'Edit', edit_clinic_path(@clinic) %> | 
