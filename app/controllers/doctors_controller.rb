@@ -25,4 +25,3 @@ class DoctorsController < ApplicationController
  end
 end 
 
-
