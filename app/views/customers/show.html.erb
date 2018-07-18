@@ -55,71 +55,125 @@
 
 
 
-<table class="table table-bordered" id="sizing-addon2">
+<table class="table table-hover table-bordered">
   <thead>
     <tr>
-      <th scope="col">Clinic Name</th>
-      <th scope="col">Clinic Address</th>
+      <th scope="col">customerfirst_name, </th>
+      <th scope="col">customerlast_name</th>
+      <th scope="col">customeremail</th>
+	  <th scope="col">customernumber</th>
+      <th scope="col">customeraddress</th>
+      <th scope="col">customerdob</th>
 
     </tr>
   </thead>
   <tbody>
 
  <tr>
- <td><%= @clinic.clinicname %></td>
- <td><%= @clinic.clinicaddress %></td>
+ <td><%= @customer.customerfirst_name %></td>
+ <td><%= @customer.customerlast_name %></td>
+ <td><%= @customer.customeremail %></td>
+ <td><%= @customer.customernumber %></td>
+ <td><%= @customer.customeraddress %></td>
+ <td><%= @customer.customerdob %></td>
 
-<h2>doctors</h2>
-<%= render @clinic.doctors %>
+ </tbody>
+ </table>
+
+ 
+ 
+ 
+ 
+
+<h2>visits</h2>
+<%= render @customer.visits %>
+<div class="fixed-top">
 <p>
  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Add A new Doctor
+    Add A new Visit
   </a>
  
 <div class="collapse" id="collapseExample">
   <div class="card card-body"> 
  
-<h2>Add a Doctor:</h2>
-<%= form_for([@clinic, @clinic.doctors.build]) do |f| %>
+<h2>Add a Visit:</h2>
+<%= form_for([@customer, @customer.visits.build]) do |f| %>
+
+
+
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- Doctor Name</span>
-   <input type="text" class="form-control" placeholder="Doctor Name" aria-describedby="sizing-addon1" <%= f.text_field :doctorname%>
+ visitdate</span>
+   <input type="date" class="form-control" placeholder="visitdate" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
+</div>
+</p>
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitnextdate</span>
+   <input type="date" class="form-control" placeholder="visitnextdate" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
+</div>
+</p>
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitissue</span>
+   <input type="text" class="form-control" placeholder="visitissue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
+</div>
+</p>
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitresolution</span>
+   <input type="text" class="form-control" placeholder="visitresolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
+</div>
+</p>
+
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitimage</span>
+   <input type="text" class="form-control" placeholder="visitimage" aria-describedby="sizing-addon1" <%= f.text_field :visitimage %>
 </div>
 </p>
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- Doctor email</span>
-   <input type="text" class="form-control" placeholder="Doctor Email" aria-describedby="sizing-addon1" <%= f.text_field :doctoremail%>
+ visitdoctor</span>
+   <input type="text" class="form-control" placeholder="visitdoctor" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
 </div>
 </p>
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- Doctor speciality</span>
-   <input type="text" class="form-control" placeholder="Doctor Speciality" aria-describedby="sizing-addon1" <%= f.text_field :doctorspeciality%>
+ visitprescription</span>
+   <input type="text" class="form-control" placeholder="visitprescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
 </div>
 </p>
-<p>
-<div class="input-group input-group-lg">
-   <span class="input-group-addon" id="sizing-addon1">
- Doctor number</span>
-   <input type="text" class="form-control" placeholder="Doctor number" aria-describedby="sizing-addon1" <%= f.text_field :doctornumber%>
-</div>
-</p>
-  <p>
- <%= f.label :doctorimage %><br>
- <%= f.text_field :doctorimage %>
- </p>
+
+
+
 
  <p>
-<button type="submit" >Create Doctor</button>
+<button type="submit" >Create Visit</button>
  </p>
  </div>
  </div>
  </p>
+ </div>
+ </br>
 <% end %> 
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> | 
-<%= link_to 'Back', clinics_path %> 
+<%= link_to 'Edit', edit_customer_path(@customer) %> | 
+<%= link_to 'Back', customers_path %> 

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-resources :clinics do
- resources :doctors 
+resources :customers do
+ resources :visits
+
 end
  root 'welcome#index'
-end
+ end

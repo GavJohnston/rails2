@@ -52,7 +52,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<h1>Doctor Profile for <%= @doctor.doctorname %></h1>
+<h1>Visit Profile for <%= @visit.visitname %></h1>
 
 
 
@@ -61,52 +61,61 @@
 <p>
  <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1"><strong>
- doctorname:</strong></span>
+ visitdate:</strong></span>
  
  <input type="text" id="disabledTextInput" class="form-control" placeholder= 
- <%= @doctor.doctorname %>>
+ <%= @visit.visitdate %>>
  </div>
 </p>
 
 <p>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">
- <strong>doctoremail:</strong></span>
+ <strong>visitnextdate:</strong></span>
  <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @doctor.doctoremail %>>
+ <%= @visit.visitnextdate %>>
  </div>
 </p>
 
 <p>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">
- <strong>doctorspeciality:</strong></span>
+ <strong>visitresolution:</strong></span>
  <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @doctor.doctorspeciality %>>
+ <%= @visit.visitresolution %>>
  </div>
 </p>
 
 <p>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">
- <strong>doctornumber:</strong></span>
+ <strong>visitimage:</strong></span>
  <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @doctor.doctornumber %>>
+ <%= @visit.visitimage %>>
  </div>
 </p>
 
 <p>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">
- <strong>doctorimage:</strong></span>
+ <strong>visitdoctor:</strong></span>
  <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @doctor.doctorimage %>>
+ <%= @visit.visitdoctor %>>
+ </div>
+</p>
+
+<p>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">
+ <strong>visitprescription:</strong></span>
+ <input type="text" id="disabledTextInput" class="form-control" placeholder=
+ <%= @visit.visitprescription %>>
  </div>
 </p>
 
 
 
-<%= link_to 'Edit', edit_clinic_doctor_path(@doctor) %>
 
+<%= link_to 'Edit', edit_customer_visit_path(@visit) %>
 
 

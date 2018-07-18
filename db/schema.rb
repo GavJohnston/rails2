@@ -10,29 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_230054) do
+ActiveRecord::Schema.define(version: 2018_07_18_114026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "clinics", force: :cascade do |t|
-    t.string "clinicname"
-    t.text "clinicaddress"
+  create_table "customers", force: :cascade do |t|
+    t.string "customerfirst_name"
+    t.string "customerlast_name"
+    t.string "customeremail"
+    t.text "customeraddress"
+    t.string "customernumber"
+    t.date "customerdob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "doctors", force: :cascade do |t|
-    t.string "doctorname"
-    t.string "doctoremail"
-    t.string "doctorspeciality"
-    t.string "doctornumber"
-    t.string "doctorimage"
-    t.bigint "clinic_id"
+  create_table "visits", force: :cascade do |t|
+    t.date "visitdate"
+    t.date "visitnextdate"
+    t.string "visitissue"
+    t.text "visitresolution"
+    t.text "visitimage"
+    t.string "visitdoctor"
+    t.string "visitprescription"
+    t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_doctors_on_clinic_id"
+    t.index ["customer_id"], name: "index_visits_on_customer_id"
   end
 
-  add_foreign_key "doctors", "clinics"
+  add_foreign_key "visits", "customers"
 end
