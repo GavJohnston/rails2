@@ -11,6 +11,8 @@ http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
  redirect_to customer_path(@customer)
  end
  
+ 
+ 
  def destroy
  @customer = Customer.find(params[:customer_id])
  @visit = @customer.visits.find(params[:id])
@@ -20,6 +22,6 @@ http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
 
  private
  def visit_params
- params.require(:visit).permit(:visitdate, :visitnextdate, :visitissue, :visitresolution, :visitimage, :visitdoctor, :visitprescription)
+ params.require(:visit).permit(:visitdate, :visitnextdate, :visitissue, :visitresolution, :visitimage, :visitdoctor, :visitprescription, :image)
  end
 end 

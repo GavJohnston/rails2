@@ -54,73 +54,93 @@
 
 
 
+<h1>Editing customer</h1>
+
+<%= form_for :visit, url: edit_customer_visit_path(@visit), method: :patch do |f| %>
+
+ <% if @visit.errors.any? %>
+ <div id="error_explanation">
+ <h2>
+ <%= pluralize(@visit.errors.count, "error") %> prohibited
+ this customer from being saved:
+ </h2>
+ <ul>
+ <% @visit.errors.full_messages.each do |msg| %>
+ <li><%= msg %></li>
+ <% end %>
+ </ul>
+ </div>
+ <% end %>
 
 
 
 
 <p>
- <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1"><strong>
- visitdate:</strong></span>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitdate</span>
+   <input type="date" class="form-control" placeholder="visitdate" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
+</div>
+</p>
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitnextdate</span>
+   <input type="date" class="form-control" placeholder="visitnextdate" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
+</div>
+</p>
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitissue</span>
+   <input type="text" class="form-control" placeholder="visitissue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
+</div>
+</p>
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitresolution</span>
+   <input type="text" class="form-control" placeholder="visitresolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
+</div>
+</p>
+
+
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitimage</span>
+   <input type="text" class="form-control" placeholder="visitimage" aria-describedby="sizing-addon1" <%= f.text_field :visitimage %>
+</div>
+</p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitdoctor</span>
+   <input type="text" class="form-control" placeholder="visitdoctor" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
+</div>
+</p>
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ visitprescription</span>
+   <input type="text" class="form-control" placeholder="visitprescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
+</div>
+</p>
+
+
+
+ <p>
+ <%= f.submit %>
+ </p>
  
- <input type="text" id="disabledTextInput" class="form-control" placeholder= 
- <%= @visit.visitdate %>>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>visitnextdate:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitnextdate %>>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>visitresolution:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitresolution %>>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>visitimage:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitimage %>>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>visitdoctor:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitdoctor %>>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>visitprescription: </strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitprescription %>>
- </div>
-</p>
-
-<p>
-<p><%= image_tag visit.image.url(:medium) %></p>
-
-</p>
-
-
-
-
-
-
-<td><strong><%= link_to 'Edit', edit_customer_visit_path(@visit), class: 'btn btn-primary btn-sm ' %></strong></td> | <td><strong><%= link_to 'Back', customer_visit_path, class: 'btn btn-primary btn-sm ' %></strong></td>
+ <% end %>

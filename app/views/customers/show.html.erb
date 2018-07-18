@@ -58,12 +58,12 @@
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
-      <th scope="col">customerfirst_name, </th>
-      <th scope="col">customerlast_name</th>
-      <th scope="col">customeremail</th>
-	  <th scope="col">customernumber</th>
-      <th scope="col">customeraddress</th>
-      <th scope="col">customerdob</th>
+      <th scope="col">First Name, </th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email Address</th>
+	  <th scope="col">Mobile Number</th>
+      <th scope="col">Home Address</th>
+      <th scope="col">Date Of Birth</th>
 
     </tr>
   </thead>
@@ -87,9 +87,13 @@
 
 <h2>visits</h2>
 <%= render @customer.visits %>
+
+
+
+
 <div class="fixed-top">
 <p>
- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+ <a class="btn btn-primary btn-lg btn-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
     Add A new Visit
   </a>
  
@@ -104,8 +108,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitdate</span>
-   <input type="date" class="form-control" placeholder="visitdate" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
+ Current Date</span>
+   <input type="date" class="form-control" placeholder="Current date" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
 </div>
 </p>
 
@@ -114,8 +118,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitnextdate</span>
-   <input type="date" class="form-control" placeholder="visitnextdate" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
+ Next Appointment Date</span>
+   <input type="date" class="form-control" placeholder="Next Appointment Date" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
 </div>
 </p>
 
@@ -124,8 +128,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitissue</span>
-   <input type="text" class="form-control" placeholder="visitissue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
+ Issue</span>
+   <input type="text" class="form-control" placeholder="Issue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
 </div>
 </p>
 
@@ -133,41 +137,51 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitresolution</span>
-   <input type="text" class="form-control" placeholder="visitresolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
+ Resolution</span>
+   <input type="text" class="form-control" placeholder="Resolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
 </div>
 </p>
 
 
 
-
 <p>
 <div class="input-group input-group-lg">
-   <span class="input-group-addon" id="sizing-addon1">
- visitimage</span>
+   <span class="input-group-addon" id="sizing-addon1">visit image
+ </span>
    <input type="text" class="form-control" placeholder="visitimage" aria-describedby="sizing-addon1" <%= f.text_field :visitimage %>
 </div>
 </p>
+
+
+
+
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitdoctor</span>
-   <input type="text" class="form-control" placeholder="visitdoctor" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
+ Doctor name</span>
+   <input type="text" class="form-control" placeholder="Doctor name" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
 </div>
 </p>
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitprescription</span>
-   <input type="text" class="form-control" placeholder="visitprescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
+ Prescription</span>
+   <input type="text" class="form-control" placeholder="Prescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
 </div>
 </p>
 
+<p>
+<div class="input-group input-group-lg">
+
+    <%= f.file_field :image %>
+</div>
+</p>
 
 
 
  <p>
-<button type="submit" >Create Visit</button>
+ <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+
  </p>
  </div>
  </div>
@@ -175,5 +189,6 @@
  </div>
  </br>
 <% end %> 
-<%= link_to 'Edit', edit_customer_path(@customer) %> | 
-<%= link_to 'Back', customers_path %> 
+
+
+<td><strong><%= link_to 'Edit', edit_customer_path(@customer), class: 'btn btn-primary btn-sm ' %></strong></td> | <td><strong><%= link_to 'Back', customers_path(@customer), class: 'btn btn-primary btn-sm ' %></strong></td>

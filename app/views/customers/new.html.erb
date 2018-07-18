@@ -14,7 +14,7 @@
  <% end %>
 
 
-
+<div class="fixed-top">
 <h1>Adding customer</h1>
 
 
@@ -22,25 +22,16 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customer name</span>
-   <input type="text" class="form-control" placeholder="Customer First Name" aria-describedby="sizing-addon1" <%= f.text_field :customerfirst_name%>
+ Patient name</span>
+   <input type="text" class="form-control" placeholder="Patient First Name" aria-describedby="sizing-addon1" <%= f.text_field :customerfirst_name%>
 </div>
 </p>
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customer Last name</span>
-   <input type="text" class="form-control" placeholder="Customer Last Name" aria-describedby="sizing-addon1" <%= f.text_field :customerlast_name%>
-</div>
-</p>
-
-
-<p>
-<div class="input-group input-group-lg">
-   <span class="input-group-addon" id="sizing-addon1">
- customer email</span>
-   <input type="text" class="form-control" placeholder="customeremail" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
+ Patient Last name</span>
+   <input type="text" class="form-control" placeholder="Patient Last Name" aria-describedby="sizing-addon1" <%= f.text_field :customerlast_name%>
 </div>
 </p>
 
@@ -48,32 +39,41 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customer number</span>
-   <input type="text" class="form-control" placeholder="Customer Number" aria-describedby="sizing-addon1" <%= f.text_field :customernumber%>
+ Patient Email Address</span>
+   <input type="text" class="form-control" placeholder="Patient Email Addresss" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
+</div>
+</p>
+
+
+<p>
+<div class="input-group input-group-lg">
+   <span class="input-group-addon" id="sizing-addon1">
+ Patient Mobile number</span>
+   <input type="text" class="form-control" placeholder="Patient Mobile Number" aria-describedby="sizing-addon1" <%= f.text_field :customernumber%>
 </div>
 </p>
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customeraddress</span>
-   <input type="body" class="form-control" placeholder="Customer Address" aria-describedby="sizing-addon1" <%= f.text_area :customeraddress%>
+ Patient Doctors Name </span>
+   <input type="body" class="form-control" placeholder="Patient Doctor Name" aria-describedby="sizing-addon1" <%= f.text_area :customeraddress%>
 </div>
 </p>
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customer email</span>
-   <input type="text" class="form-control" placeholder="Customer email" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
+ Patient Email Address</span>
+   <input type="text" class="form-control" placeholder="Patient Email Address" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
 </div>
 </p>
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- customerdob</span>
-   <input type="date" class="form-control" placeholder="Customer dob" aria-describedby="sizing-addon1" <%= f.date_field :customerdob%>
+ Patient Date of birth</span>
+   <input type="date" class="form-control" placeholder="Patient Date of Birth" aria-describedby="sizing-addon1" <%= f.date_field :customerdob%>
 </div>
 </p>
 
@@ -86,3 +86,4 @@
 <% end %>
 
 <%= link_to 'Back', customers_path %>
+</div>

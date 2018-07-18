@@ -1,38 +1,49 @@
+
+
+
 <table class="table table-striped table-dark table-bordered" id="sizing-addon2">
 
   <tbody>
     <tr>
-      <th scope="row">visitdate:</th>
+      <th scope="row">Current Date:</th>
       <td><strong><%= visit.visitdate %></strong></td>
 
     </tr>
     <tr>
-      <th scope="row">visitnextdate</th>
+      <th scope="row">Next Appointment Date:</th>
       <td><strong><%= visit.visitnextdate %></strong></td>
 
     </tr>
     <tr>
-      <th scope="row">visitissue</th>
+      <th scope="row">Issue:</th>
       <td><strong><%= visit.visitissue %></strong></td>
 
     </tr>
     <tr>
-      <th scope="row">visitresolution</th>
+      <th scope="row">Resolution:</th>
       <td><strong><%= visit.visitresolution %></strong></td>
 
     </tr>
     <tr>
-      <th scope="row">visitimage</th>
+      <th scope="row">image:</th>
       <td><strong><%= visit.visitimage %></strong></td>
-
     </tr>
+    
+      </tr>
     <tr>
-      <th scope="row">visitdoctor</th>
+
+    <td><p><%= image_tag visit.image.url(:medium) %></p>
+
+    </td>
+    </tr>
+    
+    <tr>
+      <th scope="row">Doctor Name:</th>
       <td><strong><%= visit.visitdoctor %></strong></td>
 
     </tr>
     <tr>
-      <th scope="row">visitprescription/th>
+      <th scope="row">Prescription:</th>
       <td><strong><%= visit.visitprescription %></strong></td>
 
     </tr>

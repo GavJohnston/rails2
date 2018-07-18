@@ -3,6 +3,8 @@ class CustomersController < ApplicationController
 [:index, :show] 
  def index
  @customers = Customer.all
+ @customers = Customer.where(["customeraddress ILIKE ? OR customeremail ILIKE ? OR customernumber ILIKE ? OR customerfirst_name ILIKE ?","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%"])
+
  end 
  
  def show
