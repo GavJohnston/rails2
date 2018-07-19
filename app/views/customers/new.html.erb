@@ -57,25 +57,19 @@
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
  Patient Doctors Name </span>
-   <input type="body" class="form-control" placeholder="Patient Doctor Name" aria-describedby="sizing-addon1" <%= f.text_area :customeraddress%>
+   <input type="body" class="form-control" placeholder="Patient Doctor Name" aria-describedby="sizing-addon1" <%= f.text_area :customeraddress , autofocus: true, autocomplete: "email"%>
 </div>
 </p>
 
-<p>
-<div class="input-group input-group-lg">
-   <span class="input-group-addon" id="sizing-addon1">
- Patient Email Address</span>
-   <input type="text" class="form-control" placeholder="Patient Email Address" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
-</div>
-</p>
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
  Patient Date of birth</span>
-   <input type="date" class="form-control" placeholder="Patient Date of Birth" aria-describedby="sizing-addon1" <%= f.date_field :customerdob%>
+   <input type="date" class="form-control" placeholder="Patient Date of Birth" aria-describedby="sizing-addon1" <%= f.date_field :customerdob,:value => Time.now.strftime('%Y-%m-%d') %>
 </div>
 </p>
+
 
 
 

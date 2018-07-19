@@ -1,18 +1,22 @@
 class CustomersController < ApplicationController
+
   http_basic_authenticate_with name: "dhh", password: "secret", except:
 [:index, :show] 
  def index
- @customers = Customer.all
- @customers = Customer.where(["customeraddress ILIKE ? OR customeremail ILIKE ? OR customernumber ILIKE ? OR customerfirst_name ILIKE ?","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%"])
+  
+ @customers = Customer.all.decorate
+ @customers = Customer.where(["customeraddress ILIKE ? OR customeremail ILIKE ? OR customernumber ILIKE ? OR customerfirst_name ILIKE ?","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%","%#{params[:search]}%"]).decorate
 
  end 
  
  def show
- @customer = Customer.find(params[:id])
+
+ @customer = Customer.find(params[:id]).decorate
  end 
 
 def new
  @customer = Customer.new
+ @customers = Customer.all.decorate
 end
 
 def edit

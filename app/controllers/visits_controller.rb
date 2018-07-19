@@ -1,8 +1,15 @@
 class VisitsController < ApplicationController
 http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy 
 
+def index 
+  @visits = Visit.all.decorate
+end
+
+
+
+
  def show
- @visit = Visit.find(params[:customer_id])
+ @visit = Visit.find(params[:customer_id]).decorate
  end 
 
  def create

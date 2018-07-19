@@ -58,24 +58,29 @@
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
-      <th scope="col">First Name, </th>
-      <th scope="col">Last name</th>
+      <th scope="col">Full Name:</th>
+
       <th scope="col">Email Address</th>
 	  <th scope="col">Mobile Number</th>
-      <th scope="col">Home Address</th>
+      <th scope="col">Doctor Name</th>
       <th scope="col">Date Of Birth</th>
+      
+
 
     </tr>
   </thead>
   <tbody>
 
  <tr>
- <td><%= @customer.customerfirst_name %></td>
- <td><%= @customer.customerlast_name %></td>
+       <td>
+<%= @customer.full_name %>
+  </td>
+
  <td><%= @customer.customeremail %></td>
  <td><%= @customer.customernumber %></td>
  <td><%= @customer.customeraddress %></td>
  <td><%= @customer.customerdob %></td>
+ <td><%= @customer.created_at.strftime("%A, %B %e") %></td>
 
  </tbody>
  </table>
@@ -109,17 +114,17 @@
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
  Current Date</span>
-   <input type="date" class="form-control" placeholder="Current date" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
+   <input type="date" class="form-control" placeholder="Current date" aria-describedby="sizing-addon1" <%= f.date_field :visitdate, :value => Time.now.strftime('%Y-%m-%d') %>
 </div>
 </p>
-
 
 
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
  Next Appointment Date</span>
-   <input type="date" class="form-control" placeholder="Next Appointment Date" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
+   <input type="date" class="form-control" placeholder="Next Appointment Date" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate, :value => Time.now.strftime('%Y-%m-%d') %>
+
 </div>
 </p>
 
