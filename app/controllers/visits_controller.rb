@@ -6,11 +6,23 @@ def index
 end
 
 
-
-
- def show
+ def show2
  @visit = Visit.find(params[:customer_id]).decorate
- end 
+ end
+
+def show
+    @visit = Visit.find(params[:customer_id]).decorate
+    respond_to do |format|
+     format.html
+     format.pdf do
+        pdf = PrescriptionPdf.new(@visit)
+        send_data pdf.render, filename: "Prescription_#{@visit.visitprescription}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+        end 
+    end
+end
+
 
  def create
  @customer = Customer.find(params[:customer_id])

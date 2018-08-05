@@ -71,45 +71,6 @@
 <p>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">
- <strong>Next Appointment Date:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitnextdate %> disabled>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>Resolution:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitresolution %> disabled>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>Issue/Additional info:</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.full_name3 %> disabled>
- </div>
-</p>
-
-
-
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
- <strong>Doctor Name::</strong></span>
- <input type="text" id="disabledTextInput" class="form-control" placeholder=
- <%= @visit.visitdoctor %> disabled>
- </div>
-</p>
-
-<p>
-  <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">
  <strong>Prescription: </strong></span>
  <input type="text" id="disabledTextInput" class="form-control" placeholder=
  <%= @visit.visitprescription %> disabled>
@@ -117,11 +78,6 @@
 </p>
 
 
-<p>
-
- <%= image_tag @visit.image.url(:medium) %>
-
-</p>
 
 
 
@@ -130,5 +86,3 @@
 
 
 <td><strong><%= link_to 'Edit', edit_customer_visit_path(@visit), class: 'btn btn-primary btn-sm ' %></strong></td> | <td><strong><%= link_to 'Back', customer_path, class: 'btn btn-primary btn-sm ' %></strong></td>
-
-<p><%= link_to "Prescription reciept", customer_visit_path(@visit, format: "pdf") %></p>

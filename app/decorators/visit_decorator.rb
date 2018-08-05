@@ -4,9 +4,9 @@ class VisitDecorator < Draper::Decorator
 
 
 
-  def full_name
+  def full_name3
     if visitimage.blank? && visitissue.blank?
-      'No name provided.'
+      '*NO-INFO-PROVIDED.*'
     else
       "#{ visitimage } #{ visitissue }".strip
     end

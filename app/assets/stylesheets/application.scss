@@ -37,6 +37,89 @@ body, html, .body {
 }
 
 h1{
-  
+    font-family: Trattatello;
+      font-style: fantasy;
       text-align: center;
+
+} 
+
+h2, h3, h4, h5{
+    font-family: Trattatello;
+      font-style: fantasy;
+      text-align: center;
+} 
+
+th{
+    font-size: 22px;
+    font-family: Trattatello;
+      font-style: fantasy;
+      text-align: center;
+} 
+
+
+
+.error_explanation {
+    margin: auto;
+    height: 20%;
+    width: 30%;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }
+
+
+
+
+div.slide-left {
+  width:100%;
+  overflow:hidden;
+}
+div.slide-left h1 {
+  animation: slide-left 1.5s;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+
+
+div.slide-up {
+  height:70px;
+  overflow:hidden;
+}
+div.slide-up h2, h1 {
+  animation: 1s slide-up;
+  margin-top:0%;
+}
+
+@keyframes slide-up {
+  from {
+    margin-top: 100%;
+    height: 300%; 
+  }
+
+  to {
+    margin-top: 0%;
+    height: 100%;
+  }
+}
+
+
+
+
+img{
+  height: 300px;
+  width: 100%;
+  border-radius: 15px
+}
+

@@ -54,8 +54,10 @@
 
 <div class="fixed-top">
 
-<h1>Editing Patient</h1>
 
+<div class="slide-left">
+<h1>Editing Patient</h1>
+</div>
 <%= form_for :customer, url: customer_path(@customer), method: :patch do |f| %>
 
  <% if @customer.errors.any? %>
@@ -115,13 +117,7 @@
 </div>
 </p>
 
-<p>
-<div class="input-group input-group-lg">
-   <span class="input-group-addon" id="sizing-addon1">
- Patient email Address </span>
-   <input type="text" class="form-control" placeholder="Customer email" aria-describedby="sizing-addon1" <%= f.text_field :customeremail%>
-</div>
-</p>
+
 
 <p>
 <div class="input-group input-group-lg">

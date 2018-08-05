@@ -53,8 +53,9 @@
 </nav>
 
 
-
+<div class="slide-left">
 <h1>Editing customer</h1>
+</div>
 
 <%= form_for :visit, url: edit_customer_visit_path(@visit), method: :patch do |f| %>
 
@@ -78,8 +79,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitdate</span>
-   <input type="date" class="form-control" placeholder="visitdate" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
+ Date of appointment:</span>
+   <input type="date" class="form-control" placeholder="Current Date" aria-describedby="sizing-addon1" <%= f.date_field :visitdate%>
 </div>
 </p>
 
@@ -88,8 +89,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitnextdate</span>
-   <input type="date" class="form-control" placeholder="visitnextdate" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
+ Next Appointment Date</span>
+   <input type="date" class="form-control" placeholder="Next Appointment Date" aria-describedby="sizing-addon1" <%= f.date_field :visitnextdate%>
 </div>
 </p>
 
@@ -98,8 +99,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitissue</span>
-   <input type="text" class="form-control" placeholder="visitissue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
+ Issue</span>
+   <input type="text" class="form-control" placeholder="Issue" aria-describedby="sizing-addon1" <%= f.text_field :visitissue%>
 </div>
 </p>
 
@@ -107,8 +108,8 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitresolution</span>
-   <input type="text" class="form-control" placeholder="visitresolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
+ Resolution</span>
+   <input type="text" class="form-control" placeholder="Resolution" aria-describedby="sizing-addon1" <%= f.text_area :visitresolution%>
 </div>
 </p>
 
@@ -118,22 +119,22 @@
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitimage</span>
-   <input type="text" class="form-control" placeholder="visitimage" aria-describedby="sizing-addon1" <%= f.text_field :visitimage %>
+ Additional Info</span>
+   <input type="text" class="form-control" placeholder="Additional Info" aria-describedby="sizing-addon1" <%= f.text_field :visitimage %>
 </div>
 </p>
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitdoctor</span>
-   <input type="text" class="form-control" placeholder="visitdoctor" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
+ Doctor Name</span>
+   <input type="text" class="form-control" placeholder="Doctor Name" aria-describedby="sizing-addon1" <%= f.text_field :visitdoctor%>
 </div>
 </p>
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
- visitprescription</span>
-   <input type="text" class="form-control" placeholder="visitprescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
+ Prescription</span>
+   <input type="text" class="form-control" placeholder="Prescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
 </div>
 </p>
 
