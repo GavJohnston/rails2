@@ -1,3 +1,4 @@
+<!---------------------- NAVBAR START ------------------------->
 <nav class="navbar navbar-dark bg-dark" style="background-color: #393d44;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,31 +52,23 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
+<!---------------------- NAVBAR END ------------------------->
+<div class="fixed-top">
+<!----------------------SLIDING TITLE---------------------------->
 <div class="slide-left">
 <h1>Editing customer</h1>
 </div>
+<!------------------------------------------------------------->
 
-<%= form_for :visit, url: edit_customer_visit_path(@visit), method: :patch do |f| %>
+<!-------------------EDITING PARAMETERS------------------------>
+<%= form_for :visit, url: customer_visit_path(@visit), method: :patch do |f| %>
 
- <% if @visit.errors.any? %>
- <div id="error_explanation">
- <h2>
- <%= pluralize(@visit.errors.count, "error") %> prohibited
- this customer from being saved:
- </h2>
- <ul>
- <% @visit.errors.full_messages.each do |msg| %>
- <li><%= msg %></li>
+
  <% end %>
- </ul>
- </div>
- <% end %>
+<!------------------------------------------------------------->
 
 
-
-
+<!----------------------FORM INPUTS FOR EDITING VISITS---------------------->
 <p>
 <div class="input-group input-group-lg">
    <span class="input-group-addon" id="sizing-addon1">
@@ -137,11 +130,12 @@
    <input type="text" class="form-control" placeholder="Prescription" aria-describedby="sizing-addon1" <%= f.text_field :visitprescription%>
 </div>
 </p>
-
-
-
  <p>
- <%= f.submit %>
+ <button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+
  </p>
- 
- <% end %>
+<% end %>
+
+
+<td><strong><%= link_to 'Back', class: 'btn btn-primary btn-sm ' %></strong></td>
+</div>

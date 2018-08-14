@@ -1,4 +1,5 @@
-<nav class="navbar navbar-dark bg-dark" style="background-color: #393d44;">
+<!---------------------- NAVBAR START ------------------------->
+<nav class="navbar navbar-dark bg-dark" style="background-color: #3b3e45;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,84 +15,47 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">LINK NEW</a></li>
+
         <li> <%= render 'devise/menu/registration_items' %></li>
-<li> <%= render 'devise/menu/login_items' %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+
+</ul>
+<b>
       <ul class="nav navbar-nav navbar-right">
         <li><%= render 'devise/menu/login_items' %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= current_user.email %></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
+        
+      </ul></b>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<!---------------------- NAVBAR END ------------------------->
 
 
-
-
+<!--------------------SLIDING TITLE----------------------->
 
 <div class="slide-left">
 <h1>Hello <%= current_user.email %></h1>
 </div>
 
+<!------------------------------------------------------------->
+
+
+<!---------------------BEGIN BUTTON--------------------------->
+
 <a class="btn btn-info btn-lg btn-block" href="/customers" role="button">BEGIN</a>
+<!------------------------------------------------------------->
 
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
+<!----------------------IMAGE SLIDESHOW------------------------->
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <%= image_tag("hospital1.jpg", :alt => "hospital1") %>
-    </div>
-    <div class="item">
-      <%= image_tag("hospital2.jpg", :alt => "hospital2", size: "10025x500") %>
-    </div>
-        <div class="item">
-      <%= image_tag("doctors3.jpg", :alt => "hospital3") %>
-    </div>
-    ...
-  </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
+
+<!------------------IMAGES----------------------->
+  
+  
+  <!------------------------------------------------------------->
+
+  <!-- -----------------------Controls -------------------------->
+  
+<!------------------------------------------------------------->
+
+<!------------------------------------------------------------->

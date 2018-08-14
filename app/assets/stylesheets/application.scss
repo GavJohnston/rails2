@@ -37,9 +37,12 @@ body, html, .body {
 }
 
 h1{
-    font-family: Trattatello;
-      font-style: fantasy;
+    font-family: Merienda;
+
       text-align: center;
+      color: #000000;
+      font-weight: bold;
+      text-shadow: 1.3px 1.3px #b3cbf2;
 
 } 
 
@@ -47,15 +50,27 @@ h2, h3, h4, h5{
     font-family: Trattatello;
       font-style: fantasy;
       text-align: center;
+      font-weight: bold;
+      color: #000000;
+      text-shadow: 1.3px 1.3px #b3cbf2;
+      
 } 
+
+th, h1, h2, h3, h4, h5 {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
 
 th{
     font-size: 22px;
     font-family: Trattatello;
       font-style: fantasy;
       text-align: center;
+      font-weight: bold;
+      color: #262626;
+      text-shadow: 1.2px 1px #b3cbf2;
 } 
-
 
 
 .error_explanation {
@@ -97,7 +112,7 @@ div.slide-up {
   height:70px;
   overflow:hidden;
 }
-div.slide-up h2, h1 {
+div.slide-up h3, h2, h1 {
   animation: 1s slide-up;
   margin-top:0%;
 }
@@ -117,9 +132,37 @@ div.slide-up h2, h1 {
 
 
 
-img{
-  height: 300px;
-  width: 100%;
-  border-radius: 15px
+
+
+tr{
+  font-size: 17px;
+
 }
 
+td{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.fixed-top div {
+	animation-name: fade-in;
+	animation-fill-mode: both;
+	animation-duration: .5s;
+}
+
+$animationDelay: 1;
+@for $i from 1 through 15 {
+	.fixed-top div:nth-of-type(#{$i}) {
+		animation-delay: #{0.3+($i)/30}s;
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

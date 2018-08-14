@@ -1,4 +1,5 @@
-<nav class="navbar navbar-dark bg-dark" style="background-color: #393d44;">
+<!---------------------- NAVBAR START ------------------------->
+<nav class="navbar navbar-dark bg-dark" style="background-color: #3b3e45;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,50 +15,31 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">LINK NEW</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+
+        <li> <%= render 'devise/menu/registration_items' %></li>
+
+</ul>
+<b>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">LINKNEW</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
+        <li><%= link_to 'Back to patients', customers_path(@customer_id) %></li>       
+        <li><%= render 'devise/menu/login_items' %></li>
+        
+      </ul></b>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<!---------------------- NAVBAR END ------------------------->
 
+<!---------------------SLIDING TITLE--------------------------->
 <div class="fixed-top">
 
 
 <div class="slide-left">
 <h1>Editing Patient</h1>
 </div>
+
+<!------------------------------------------------------------->
+<!--------------------EDITING PARAMETERS----------------------->
 <%= form_for :customer, url: customer_path(@customer), method: :patch do |f| %>
 
  <% if @customer.errors.any? %>
@@ -73,7 +55,10 @@
  </ul>
  </div>
  <% end %>
+<!------------------------------------------------------------->
 
+
+<!-------------------------PATIENT FORM INPUTS------------------>
 
 <p>
 <div class="input-group input-group-lg">
@@ -131,8 +116,10 @@
 
  </p>
 <% end %>
+<!------------------------------------------------------------->
 
-
-
-<td><strong><%= link_to 'Back', customers_path, class: 'btn btn-primary btn-sm ' %></strong></td>
+<!-----------------------BUTTONS---------------------->
+<td><strong><%= link_to 'Back', customers_path(@customer_id), class: 'btn btn-primary btn-sm ' %></strong></td>
 </div>
+
+<!------------------------------------------------------------->

@@ -16,6 +16,8 @@ class CustomerDecorator < Draper::Decorator
 def full_name2
     if customeraddress.blank?
       '*DOCTORS NAME IS NOT PROVIDED*'
+    else
+      "#{ customeraddress }".strip
     end
 end
 

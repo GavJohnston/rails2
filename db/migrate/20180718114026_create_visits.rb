@@ -4,8 +4,8 @@ class CreateVisits < ActiveRecord::Migration[5.2]
       t.date :visitdate
       t.date :visitnextdate
       t.string :visitissue
-      t.text :visitresolution
-      t.text :visitimage
+      t.string :visitresolution
+      t.string :visitimage
       t.string :visitdoctor
       t.string :visitprescription
       t.references :customer, foreign_key: true

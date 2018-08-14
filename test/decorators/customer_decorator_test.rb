@@ -5,8 +5,10 @@ describe CustomerDecorator do
 
   let(:customerfirst_name)  { 'John'  }
   let(:customerlast_name)  { 'Smith' }
+  let(:customeraddress)  { 'TEST' }
 
   let(:customer) { FactoryGirl.build(:customer, 
+                                 customeraddress: customeraddress,
                                  customerfirst_name: customerfirst_name, 
                                  customerlast_name: customerlast_name) }
   

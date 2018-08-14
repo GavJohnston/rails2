@@ -47,6 +47,7 @@ gem 'devise'
 
 gem 'draper'
 
+gem 'prawn'
 
 gem "paperclip", "~> 5.2.0"
 
